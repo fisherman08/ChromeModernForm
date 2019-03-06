@@ -1,0 +1,21 @@
+{
+  "name": "Chrome Modern Forms",
+  "version": "1.0.0",
+  "description": "住所に全角のみを受け付けるモダンなフォームに対抗するための拡張機能です。",
+  "permissions": [
+    "contextMenus",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["js/replacer.js", "js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["js/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "manifest_version": 2
+}
