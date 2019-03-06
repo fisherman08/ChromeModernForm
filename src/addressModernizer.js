@@ -9,7 +9,10 @@ class AddressModernizer {
     static modernize(source) {
         let result = source
 
-        result = result.replace(/1/g, "REPLACES")
+        // 英数字
+        result = result.replace(/[A-Za-z0-9]/g, function(s) {
+            return String.fromCharCode(s.charCodeAt(0) + 65248);
+        });
 
         return result
     }
