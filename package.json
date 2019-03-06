@@ -1,0 +1,35 @@
+{
+  "name": "chromemodernform",
+  "version": "1.0.0",
+  "description": "住所に全角しか受け付けないモダンなフォームに対応するChrome Extensionです。",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "ava -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fisherman08/ChromeModernForm.git"
+  },
+  "author": "Y.Kaneko",
+  "bugs": {
+    "url": "https://github.com/fisherman08/ChromeModernForm/issues"
+  },
+  "homepage": "https://github.com/fisherman08/ChromeModernForm#readme",
+  "devDependencies": {
+    "ava": "^1.3.1",
+    "babel-cli": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ]
+  }
+}
