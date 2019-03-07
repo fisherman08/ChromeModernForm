@@ -1,0 +1,7 @@
+{
+  "extension_name": { "message": "Chrome Modern Form"},
+  "extension_desc": {
+    "message": "Convert your input into Japanese Zenkaku characters.\nRight click on the form and press 'Modernize input'."
+  },
+  "exec_modernize": {"message": "Modernize input"}
+}

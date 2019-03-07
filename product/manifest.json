@@ -1,7 +1,9 @@
 {
-  "name": "Chrome Modern Forms",
+  "name": "__MSG_extension_name__",
   "version": "1.0.0",
-  "description": "住所に全角のみを受け付けるモダンなフォームに対抗するための拡張機能です。",
+  "default_locale": "en",
+  "description": "__MSG_extension_desc__",
+  "homepage_url": "https://fisherman08.github.io/ChromeModernForm/",
   "permissions": [
     "contextMenus",
     "tabs"

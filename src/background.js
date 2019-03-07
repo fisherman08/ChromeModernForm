@@ -2,7 +2,7 @@
 
 chrome.runtime.onInstalled.addListener(function() {
     chrome.contextMenus.create({
-        title: "Modernize my inputs",
+        title: chrome.i18n.getMessage("exec_modernize"),
         contexts: ["editable"],
         id: "context1",
         type: "normal"
