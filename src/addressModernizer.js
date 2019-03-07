@@ -7,15 +7,20 @@ class AddressModernizer {
      * @return {string}
      */
     static modernize(source) {
-        let result = source
+        let result = source;
 
         // 英数字
-        result = result.replace(/[A-Za-z0-9]/g, function(s) {
+        result = result.replace(/[!-~]/g, function(s) {
             return String.fromCharCode(s.charCodeAt(0) + 65248);
         });
 
-        return result
+        result = result
+            .replace(/･/g, "・")
+            .replace(/¥/g, "￥")
+            .replace(/\s/g, "　");
+
+        return result;
     }
 }
 
-export default AddressModernizer
+export default AddressModernizer;

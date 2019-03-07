@@ -1,20 +1,19 @@
+import AddressModernizer from "./addressModernizer"
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
-    const type = request.type
-    const input = document.querySelector(":focus")
-    const fail = () => {
-        sendResponse(false)
-    }
+    const request_type = request.type;
+    const input = document.querySelector(":focus");
 
     if(!input) {
-        fail()
         return
     }
 
-    const tagname = input.tagName.toLowerCase()
-    const input_type = (input.getAttribute("type") || "").toLowerCase()
+    const tagname = input.tagName.toLowerCase();
+    const input_type = (input.getAttribute("type") || "").toLowerCase();
 
     if(
+        // textareaでもinput[type=text|password]でもなければ何もしない
         tagname !== "textarea" &&
         (
             tagname !== "input" ||
@@ -25,19 +24,16 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             )
         )
     ){
-        fail()
-        return
+        return;
     }
 
+    // 現在の入力値
+    const raw_value = input.value || "";
 
-    if(type === "get_raw_value"){
-        // 現在の入力値を返す
-        const raw_value = input.value || ""
-        sendResponse({raw_value: raw_value})
-    } else if(type === "send_result"){
-        // 変換後の値をセットする
-        input.value = request.result || ""
-        sendResponse(true)
-    }
+    // 変換
+    const replaced_value = AddressModernizer.modernize(raw_value);
 
-})
+    // 書き換え
+    input.value = replaced_value;
+
+});
