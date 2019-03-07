@@ -8,7 +8,7 @@
 
 ## Release Notes
 
-#### v1.0.0 (2019/03/08 )
+#### v1.0.1 (2019/03/08 )
 * First Release
 
 ## License

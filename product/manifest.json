@@ -1,6 +1,6 @@
 {
   "name": "__MSG_extension_name__",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "default_locale": "en",
   "description": "__MSG_extension_desc__",
   "homepage_url": "https://fisherman08.github.io/ChromeModernForm/",
@@ -11,7 +11,8 @@
   },
   "permissions": [
     "contextMenus",
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
   "background": {
     "scripts": ["js/background.js"],
