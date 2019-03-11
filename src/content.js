@@ -6,6 +6,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     const input = document.querySelector(":focus");
 
     if(!input) {
+        sendResponse("no focused input found");
         return
     }
 
@@ -24,6 +25,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             )
         )
     ){
+        sendResponse("focused element is not an input");
         return;
     }
 
@@ -35,5 +37,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     // 書き換え
     input.value = replaced_value;
+    sendResponse("'" + raw_value + "' has been converted into '" + replaced_value + "'");
 
 });
