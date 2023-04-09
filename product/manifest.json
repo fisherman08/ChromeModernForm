@@ -1,6 +1,6 @@
 {
   "name": "__MSG_extension_name__",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "default_locale": "en",
   "description": "__MSG_extension_desc__",
   "homepage_url": "https://fisherman08.github.io/ChromeModernForm/",
@@ -15,8 +15,7 @@
     "activeTab"
   ],
   "background": {
-    "scripts": ["js/background.js"],
-    "persistent": false
+    "service_worker": "js/background.js"
   },
   "content_scripts": [
     {
@@ -25,5 +24,5 @@
       "run_at": "document_start"
     }
   ],
-  "manifest_version": 2
+  "manifest_version": 3
 }

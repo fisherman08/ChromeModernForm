@@ -3,18 +3,13 @@ class AddressModernizer {
 
     /**
      * リプレースする
-     * @param {string}source
+     * @param {string} source
      * @return {string}
      */
-    static modernize(source) {
-        let result = source;
+    static modernize(source: string): string {
 
-        // 英数字
-        result = result.replace(/[!-~]/g, function(s) {
-            return String.fromCharCode(s.charCodeAt(0) + 65248);
-        });
-
-        result = result
+        const result = source
+            .replace(/[!-~]/g, (s) => String.fromCharCode(s.charCodeAt(0) + 65248))
             .replace(/･/g, "・")
             .replace(/¥/g, "￥")
             .replace(/\s/g, "　");

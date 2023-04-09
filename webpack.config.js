@@ -1,16 +1,23 @@
 module.exports = {
     mode: 'production',
     entry: {
-        "background": "./src/background.js",
-        //"addressModernizer": "./src/addressModernizer.js",
-        "content": "./src/content.js"
+        "background": "./src/background.ts",
+        "content": "./src/content.ts"
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+        ],
     },
     output: {
-        path: __dirname +'/product/js',
+        path: __dirname + '/product/js',
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.ts', '.js'],
     },
-    module: {}
 };
